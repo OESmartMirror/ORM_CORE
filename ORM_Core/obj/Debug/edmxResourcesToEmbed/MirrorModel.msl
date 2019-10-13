@@ -1,0 +1,51 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="datatableModelStoreContainer" CdmEntityContainer="datatableEntities">
+    <EntitySetMapping Name="pictures">
+      <EntityTypeMapping TypeName="datatableModel.picture">
+        <MappingFragment StoreEntitySet="pictures">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="user_id" ColumnName="user_id" />
+          <ScalarProperty Name="picture1" ColumnName="picture" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="program_parameters">
+      <EntityTypeMapping TypeName="datatableModel.program_parameters">
+        <MappingFragment StoreEntitySet="program_parameters">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="program_id" ColumnName="program_id" />
+          <ScalarProperty Name="parameter_name" ColumnName="parameter_name" />
+          <ScalarProperty Name="parameter_value" ColumnName="parameter_value" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="programs">
+      <EntityTypeMapping TypeName="datatableModel.program">
+        <MappingFragment StoreEntitySet="programs">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="name" ColumnName="name" />
+          <ScalarProperty Name="user_id" ColumnName="user_id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="users">
+      <EntityTypeMapping TypeName="datatableModel.user">
+        <MappingFragment StoreEntitySet="users">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="label" ColumnName="label" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="users_parameters">
+      <EntityTypeMapping TypeName="datatableModel.users_parameters">
+        <MappingFragment StoreEntitySet="users_parameters">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="user_id" ColumnName="user_id" />
+          <ScalarProperty Name="parameter_name" ColumnName="parameter_name" />
+          <ScalarProperty Name="parameter_value" ColumnName="parameter_value" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

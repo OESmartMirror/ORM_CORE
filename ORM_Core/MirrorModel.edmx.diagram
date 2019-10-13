@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="3ac25ae756b64fd3b406df3888de3f9b" Name="Diagram1">
+        <EntityTypeShape EntityType="datatableModel.picture" Width="1.5" PointX="3" PointY="1.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="datatableModel.program_parameters" Width="1.5" PointX="5.25" PointY="3.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="datatableModel.program" Width="1.5" PointX="3" PointY="3.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="datatableModel.user" Width="1.5" PointX="0.75" PointY="3.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="datatableModel.users_parameters" Width="1.5" PointX="3" PointY="6.5" IsExpanded="true" />
+        <AssociationConnector Association="datatableModel.pictures_users_id_fk" ManuallyRouted="false" />
+        <AssociationConnector Association="datatableModel.program_parameters_users_id_fk" ManuallyRouted="false" />
+        <AssociationConnector Association="datatableModel.programs_users_id_fk" ManuallyRouted="false" />
+        <AssociationConnector Association="datatableModel.users_parameters_users_id_fk" ManuallyRouted="false" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

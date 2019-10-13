@@ -1,0 +1,123 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="datatableModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityType Name="picture">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="user_id" Type="Int32" Nullable="false" />
+    <Property Name="picture1" Type="Binary" MaxLength="Max" FixedLength="false" Nullable="false" />
+    <NavigationProperty Name="user" Relationship="Self.pictures_users_id_fk" FromRole="pictures" ToRole="users" />
+  </EntityType>
+  <EntityType Name="program_parameters">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="program_id" Type="Int32" Nullable="false" />
+    <Property Name="parameter_name" Type="String" MaxLength="20" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="parameter_value" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
+    <NavigationProperty Name="program" Relationship="Self.program_parameters_users_id_fk" FromRole="program_parameters" ToRole="programs" />
+  </EntityType>
+  <EntityType Name="program">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="name" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="user_id" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="program_parameters" Relationship="Self.program_parameters_users_id_fk" FromRole="programs" ToRole="program_parameters" />
+    <NavigationProperty Name="user" Relationship="Self.programs_users_id_fk" FromRole="programs" ToRole="users" />
+  </EntityType>
+  <EntityType Name="user">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="label" Type="String" MaxLength="20" FixedLength="false" Unicode="false" Nullable="false" />
+    <NavigationProperty Name="pictures" Relationship="Self.pictures_users_id_fk" FromRole="users" ToRole="pictures" />
+    <NavigationProperty Name="programs" Relationship="Self.programs_users_id_fk" FromRole="users" ToRole="programs" />
+    <NavigationProperty Name="users_parameters" Relationship="Self.users_parameters_users_id_fk" FromRole="users" ToRole="users_parameters" />
+  </EntityType>
+  <EntityType Name="users_parameters">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="user_id" Type="Int32" Nullable="false" />
+    <Property Name="parameter_name" Type="String" MaxLength="20" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="parameter_value" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
+    <NavigationProperty Name="user" Relationship="Self.users_parameters_users_id_fk" FromRole="users_parameters" ToRole="users" />
+  </EntityType>
+  <Association Name="pictures_users_id_fk">
+    <End Role="users" Type="Self.user" Multiplicity="1" />
+    <End Role="pictures" Type="Self.picture" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="users">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="pictures">
+        <PropertyRef Name="user_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="program_parameters_users_id_fk">
+    <End Role="programs" Type="Self.program" Multiplicity="1" />
+    <End Role="program_parameters" Type="Self.program_parameters" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="programs">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="program_parameters">
+        <PropertyRef Name="program_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="programs_users_id_fk">
+    <End Role="users" Type="Self.user" Multiplicity="1" />
+    <End Role="programs" Type="Self.program" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="users">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="programs">
+        <PropertyRef Name="user_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="users_parameters_users_id_fk">
+    <End Role="users" Type="Self.user" Multiplicity="1" />
+    <End Role="users_parameters" Type="Self.users_parameters" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="users">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="users_parameters">
+        <PropertyRef Name="user_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="datatableEntities" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="pictures" EntityType="Self.picture" />
+    <EntitySet Name="program_parameters" EntityType="Self.program_parameters" />
+    <EntitySet Name="programs" EntityType="Self.program" />
+    <EntitySet Name="users" EntityType="Self.user" />
+    <EntitySet Name="users_parameters" EntityType="Self.users_parameters" />
+    <AssociationSet Name="pictures_users_id_fk" Association="Self.pictures_users_id_fk">
+      <End Role="users" EntitySet="users" />
+      <End Role="pictures" EntitySet="pictures" />
+    </AssociationSet>
+    <AssociationSet Name="program_parameters_users_id_fk" Association="Self.program_parameters_users_id_fk">
+      <End Role="programs" EntitySet="programs" />
+      <End Role="program_parameters" EntitySet="program_parameters" />
+    </AssociationSet>
+    <AssociationSet Name="programs_users_id_fk" Association="Self.programs_users_id_fk">
+      <End Role="users" EntitySet="users" />
+      <End Role="programs" EntitySet="programs" />
+    </AssociationSet>
+    <AssociationSet Name="users_parameters_users_id_fk" Association="Self.users_parameters_users_id_fk">
+      <End Role="users" EntitySet="users" />
+      <End Role="users_parameters" EntitySet="users_parameters" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>
