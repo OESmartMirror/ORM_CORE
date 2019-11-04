@@ -20,3 +20,5 @@ C:\Users\csont\source\repos\ORM_Core\ORM_Core\bin\Debug\Renci.SshNet.xml
 C:\Users\csont\source\repos\ORM_Core\ORM_Core\obj\Debug\ORM_Core.csproj.CopyComplete
 C:\Users\csont\source\repos\ORM_Core\ORM_Core\obj\Debug\ORM_Core.exe
 C:\Users\csont\source\repos\ORM_Core\ORM_Core\obj\Debug\ORM_Core.pdb
+C:\Users\csont\source\repos\ORM_Core\ORM_Core\bin\Debug\Newtonsoft.Json.dll
+C:\Users\csont\source\repos\ORM_Core\ORM_Core\bin\Debug\Newtonsoft.Json.xml
