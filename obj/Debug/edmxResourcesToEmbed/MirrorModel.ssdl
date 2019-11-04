@@ -1,0 +1,115 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="datatableModel.Store" Provider="MySql.Data.MySqlClient" ProviderManifestToken="5.5" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="pictures">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="user_id" Type="int" Nullable="false" />
+    <Property Name="picture" Type="longblob" Nullable="false" />
+  </EntityType>
+  <EntityType Name="program_parameters">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="program_id" Type="int" Nullable="false" />
+    <Property Name="parameter_name" Type="varchar" MaxLength="20" Nullable="false" />
+    <Property Name="parameter_value" Type="varchar" MaxLength="100" Nullable="false" />
+  </EntityType>
+  <EntityType Name="programs">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="name" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="user_id" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="users">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="label" Type="varchar" MaxLength="20" Nullable="false" />
+  </EntityType>
+  <EntityType Name="users_parameters">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="user_id" Type="int" Nullable="false" />
+    <Property Name="parameter_name" Type="varchar" MaxLength="20" Nullable="false" />
+    <Property Name="parameter_value" Type="varchar" MaxLength="100" Nullable="false" />
+  </EntityType>
+  <Association Name="pictures_users_id_fk">
+    <End Role="users" Type="Self.users" Multiplicity="1" />
+    <End Role="pictures" Type="Self.pictures" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="users">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="pictures">
+        <PropertyRef Name="user_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="program_parameters_users_id_fk">
+    <End Role="programs" Type="Self.programs" Multiplicity="1" />
+    <End Role="program_parameters" Type="Self.program_parameters" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="programs">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="program_parameters">
+        <PropertyRef Name="program_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="programs_users_id_fk">
+    <End Role="users" Type="Self.users" Multiplicity="1" />
+    <End Role="programs" Type="Self.programs" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="users">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="programs">
+        <PropertyRef Name="user_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="users_parameters_users_id_fk">
+    <End Role="users" Type="Self.users" Multiplicity="1" />
+    <End Role="users_parameters" Type="Self.users_parameters" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="users">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="users_parameters">
+        <PropertyRef Name="user_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="datatableModelStoreContainer">
+    <EntitySet Name="pictures" EntityType="Self.pictures" Schema="datatable" store:Type="Tables" />
+    <EntitySet Name="program_parameters" EntityType="Self.program_parameters" Schema="datatable" store:Type="Tables" />
+    <EntitySet Name="programs" EntityType="Self.programs" Schema="datatable" store:Type="Tables" />
+    <EntitySet Name="users" EntityType="Self.users" Schema="datatable" store:Type="Tables" />
+    <EntitySet Name="users_parameters" EntityType="Self.users_parameters" Schema="datatable" store:Type="Tables" />
+    <AssociationSet Name="pictures_users_id_fk" Association="Self.pictures_users_id_fk">
+      <End Role="users" EntitySet="users" />
+      <End Role="pictures" EntitySet="pictures" />
+    </AssociationSet>
+    <AssociationSet Name="program_parameters_users_id_fk" Association="Self.program_parameters_users_id_fk">
+      <End Role="programs" EntitySet="programs" />
+      <End Role="program_parameters" EntitySet="program_parameters" />
+    </AssociationSet>
+    <AssociationSet Name="programs_users_id_fk" Association="Self.programs_users_id_fk">
+      <End Role="users" EntitySet="users" />
+      <End Role="programs" EntitySet="programs" />
+    </AssociationSet>
+    <AssociationSet Name="users_parameters_users_id_fk" Association="Self.users_parameters_users_id_fk">
+      <End Role="users" EntitySet="users" />
+      <End Role="users_parameters" EntitySet="users_parameters" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>

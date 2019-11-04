@@ -13,7 +13,9 @@ namespace ORM_Core
             Console.WriteLine("Hello World!");
             Console.ReadKey();
             datatableEntities1 datatableEntities1 = new datatableEntities1();
-            datatableEntities1.users.
+            //datatableEntities1.users.
+
+            user user = new user();
         }
     }
 }
