@@ -22,3 +22,27 @@ C:\Users\csont\source\repos\ORM_Core\ORM_Core\obj\Debug\ORM_Core.exe
 C:\Users\csont\source\repos\ORM_Core\ORM_Core\obj\Debug\ORM_Core.pdb
 C:\Users\csont\source\repos\ORM_Core\ORM_Core\bin\Debug\Newtonsoft.Json.dll
 C:\Users\csont\source\repos\ORM_Core\ORM_Core\bin\Debug\Newtonsoft.Json.xml
+D:\GoogleDrive\_OE_MÉRNÖK_INFO\5. FÉLÉV\repos\ORM_CORE\ORM_Core\bin\Debug\ORM_Core.exe.config
+D:\GoogleDrive\_OE_MÉRNÖK_INFO\5. FÉLÉV\repos\ORM_CORE\ORM_Core\bin\Debug\ORM_Core.exe
+D:\GoogleDrive\_OE_MÉRNÖK_INFO\5. FÉLÉV\repos\ORM_CORE\ORM_Core\bin\Debug\ORM_Core.pdb
+D:\GoogleDrive\_OE_MÉRNÖK_INFO\5. FÉLÉV\repos\ORM_CORE\ORM_Core\bin\Debug\BouncyCastle.Crypto.dll
+D:\GoogleDrive\_OE_MÉRNÖK_INFO\5. FÉLÉV\repos\ORM_CORE\ORM_Core\bin\Debug\EntityFramework.dll
+D:\GoogleDrive\_OE_MÉRNÖK_INFO\5. FÉLÉV\repos\ORM_CORE\ORM_Core\bin\Debug\EntityFramework.SqlServer.dll
+D:\GoogleDrive\_OE_MÉRNÖK_INFO\5. FÉLÉV\repos\ORM_CORE\ORM_Core\bin\Debug\Google.Protobuf.dll
+D:\GoogleDrive\_OE_MÉRNÖK_INFO\5. FÉLÉV\repos\ORM_CORE\ORM_Core\bin\Debug\MySql.Data.dll
+D:\GoogleDrive\_OE_MÉRNÖK_INFO\5. FÉLÉV\repos\ORM_CORE\ORM_Core\bin\Debug\MySql.Data.Entity.EF6.dll
+D:\GoogleDrive\_OE_MÉRNÖK_INFO\5. FÉLÉV\repos\ORM_CORE\ORM_Core\bin\Debug\Newtonsoft.Json.dll
+D:\GoogleDrive\_OE_MÉRNÖK_INFO\5. FÉLÉV\repos\ORM_CORE\ORM_Core\bin\Debug\Renci.SshNet.dll
+D:\GoogleDrive\_OE_MÉRNÖK_INFO\5. FÉLÉV\repos\ORM_CORE\ORM_Core\bin\Debug\EntityFramework.xml
+D:\GoogleDrive\_OE_MÉRNÖK_INFO\5. FÉLÉV\repos\ORM_CORE\ORM_Core\bin\Debug\EntityFramework.SqlServer.xml
+D:\GoogleDrive\_OE_MÉRNÖK_INFO\5. FÉLÉV\repos\ORM_CORE\ORM_Core\bin\Debug\Google.Protobuf.pdb
+D:\GoogleDrive\_OE_MÉRNÖK_INFO\5. FÉLÉV\repos\ORM_CORE\ORM_Core\bin\Debug\Google.Protobuf.xml
+D:\GoogleDrive\_OE_MÉRNÖK_INFO\5. FÉLÉV\repos\ORM_CORE\ORM_Core\bin\Debug\MySql.Data.xml
+D:\GoogleDrive\_OE_MÉRNÖK_INFO\5. FÉLÉV\repos\ORM_CORE\ORM_Core\bin\Debug\MySql.Data.Entity.EF6.xml
+D:\GoogleDrive\_OE_MÉRNÖK_INFO\5. FÉLÉV\repos\ORM_CORE\ORM_Core\bin\Debug\Newtonsoft.Json.xml
+D:\GoogleDrive\_OE_MÉRNÖK_INFO\5. FÉLÉV\repos\ORM_CORE\ORM_Core\bin\Debug\Renci.SshNet.xml
+D:\GoogleDrive\_OE_MÉRNÖK_INFO\5. FÉLÉV\repos\ORM_CORE\ORM_Core\obj\Debug\ORM_Core.csprojAssemblyReference.cache
+D:\GoogleDrive\_OE_MÉRNÖK_INFO\5. FÉLÉV\repos\ORM_CORE\ORM_Core\obj\Debug\ORM_Core.csproj.CoreCompileInputs.cache
+D:\GoogleDrive\_OE_MÉRNÖK_INFO\5. FÉLÉV\repos\ORM_CORE\ORM_Core\obj\Debug\ORM_Core.csproj.CopyComplete
+D:\GoogleDrive\_OE_MÉRNÖK_INFO\5. FÉLÉV\repos\ORM_CORE\ORM_Core\obj\Debug\ORM_Core.exe
+D:\GoogleDrive\_OE_MÉRNÖK_INFO\5. FÉLÉV\repos\ORM_CORE\ORM_Core\obj\Debug\ORM_Core.pdb

@@ -69,6 +69,20 @@ namespace ORM_Core
             }
         }
 
+        public static void Init(this user _user, String _name)
+        {
+            users_parameters temp = new users_parameters
+            {
+                parameter_name = "Name",
+                parameter_value = _name
+            };
+            if (!_user.users_parameters.Contains(temp))
+            {
+                _user.label = _name.GetHashCode().ToString();
+                _user.users_parameters.Add(temp);
+            }    
+        }
+
         public static void AddParameters(this user _user, List<users_parameters> _parameters)
         {
             foreach (users_parameters param in _parameters)
@@ -101,9 +115,15 @@ namespace ORM_Core
 
         public static void AddProgram(this user _user, String _programName)
         {
-            program temp = new program();
+            program temp = new program
+            {
+                name = _programName
+            };
             temp.AddParameters("ProgramName",_programName);
-            _user.programs.Add(temp);
+            if(!_user.programs.Contains(temp))
+            {
+                _user.programs.Add(temp);
+            }
         }
 
         public static void AddParameters(this program _program, program_parameters _parameter)

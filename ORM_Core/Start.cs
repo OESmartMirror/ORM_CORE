@@ -18,7 +18,7 @@ namespace ORM_Core
             
             String path = "C:" + Path.DirectorySeparatorChar + "Face" + Path.DirectorySeparatorChar;
             user user = new user();
-            user.AddParameter("Name","Tóth András");
+            user.Init("Tóth András");
             user.AddParameter("Birthday","1991.06.18");
             user.AddProgram("Weather");
             user.GetProgramByName("Weather").AddParameters("Location", "Székesfehérvár");
