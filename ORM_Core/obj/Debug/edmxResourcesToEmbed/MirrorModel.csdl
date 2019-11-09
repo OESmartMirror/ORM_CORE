@@ -8,6 +8,7 @@
     <Property Name="user_id" Type="Int32" Nullable="false" />
     <Property Name="picture1" Type="Binary" MaxLength="Max" FixedLength="false" Nullable="false" />
     <NavigationProperty Name="user" Relationship="Self.pictures_users_id_fk" FromRole="pictures" ToRole="users" />
+    <Property Name="time_stamp" Type="DateTime" Nullable="false" />
   </EntityType>
   <EntityType Name="program_parameters">
     <Key>
@@ -97,7 +98,7 @@
       </Dependent>
     </ReferentialConstraint>
   </Association>
-  <EntityContainer Name="datatableEntities" annotation:LazyLoadingEnabled="true">
+  <EntityContainer Name="datatableEntities1" annotation:LazyLoadingEnabled="true">
     <EntitySet Name="pictures" EntityType="Self.picture" />
     <EntitySet Name="program_parameters" EntityType="Self.program_parameters" />
     <EntitySet Name="programs" EntityType="Self.program" />

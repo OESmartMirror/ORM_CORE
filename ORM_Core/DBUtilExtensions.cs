@@ -78,7 +78,7 @@ namespace ORM_Core
             };
             if (!_user.users_parameters.Contains(temp))
             {
-                _user.label = _name.GetHashCode().ToString();
+                _user.label = Math.Abs(_name.GetHashCode()).ToString();
                 _user.users_parameters.Add(temp);
             }    
         }

@@ -1,9 +1,10 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
-  <EntityContainerMapping StorageEntityContainer="datatableModelStoreContainer" CdmEntityContainer="datatableEntities">
+  <EntityContainerMapping StorageEntityContainer="datatableModelStoreContainer" CdmEntityContainer="datatableEntities1">
     <EntitySetMapping Name="pictures">
       <EntityTypeMapping TypeName="datatableModel.picture">
         <MappingFragment StoreEntitySet="pictures">
+          <ScalarProperty Name="time_stamp" ColumnName="time_stamp" />
           <ScalarProperty Name="id" ColumnName="id" />
           <ScalarProperty Name="user_id" ColumnName="user_id" />
           <ScalarProperty Name="picture1" ColumnName="picture" />
