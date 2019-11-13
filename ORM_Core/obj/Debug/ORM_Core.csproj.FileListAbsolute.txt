@@ -25,6 +25,8 @@ D:\GoogleDrive\_OE_MÉRNÖK_INFO\5. FÉLÉV\repos\ORM_CORE\ORM_Core\obj\Debug\OR
 C:\Users\csont\source\repos\ORM_Core\ORM_Core\bin\Debug\ORM_Core.exe.config
 C:\Users\csont\source\repos\ORM_Core\ORM_Core\bin\Debug\ORM_Core.exe
 C:\Users\csont\source\repos\ORM_Core\ORM_Core\bin\Debug\ORM_Core.pdb
+C:\Users\csont\source\repos\ORM_Core\ORM_Core\bin\Debug\ORM_Core.exe.CodeAnalysisLog.xml
+C:\Users\csont\source\repos\ORM_Core\ORM_Core\bin\Debug\ORM_Core.exe.lastcodeanalysissucceeded
 C:\Users\csont\source\repos\ORM_Core\ORM_Core\bin\Debug\BouncyCastle.Crypto.dll
 C:\Users\csont\source\repos\ORM_Core\ORM_Core\bin\Debug\EntityFramework.dll
 C:\Users\csont\source\repos\ORM_Core\ORM_Core\bin\Debug\EntityFramework.SqlServer.dll
