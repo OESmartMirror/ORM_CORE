@@ -76,8 +76,8 @@ C:\Users\csont\source\repos\ORM_Core\ORM_Core\bin\Debug\System.Collections.Immut
 C:\Users\csont\source\repos\ORM_Core\ORM_Core\bin\Debug\System.Diagnostics.DiagnosticSource.xml
 C:\Users\csont\source\repos\ORM_Core\ORM_Core\bin\Debug\System.Interactive.Async.xml
 C:\Users\csont\source\repos\ORM_Core\ORM_Core\bin\Debug\System.Runtime.CompilerServices.Unsafe.xml
-C:\Users\csont\source\repos\ORM_Core\ORM_Core\obj\Debug\ORM_Core.csprojAssemblyReference.cache
 C:\Users\csont\source\repos\ORM_Core\ORM_Core\obj\Debug\ORM_Core.csproj.CoreCompileInputs.cache
 C:\Users\csont\source\repos\ORM_Core\ORM_Core\obj\Debug\ORM_Core.csproj.CopyComplete
 C:\Users\csont\source\repos\ORM_Core\ORM_Core\obj\Debug\ORM_Core.exe
 C:\Users\csont\source\repos\ORM_Core\ORM_Core\obj\Debug\ORM_Core.pdb
+C:\Users\csont\source\repos\ORM_Core\ORM_Core\obj\Debug\ORM_Core.csprojAssemblyReference.cache
