@@ -160,44 +160,83 @@ namespace ORM_Core
 
         public static String GetParametersAsJson(this user _user)
         {
-            return JsonConvert.SerializeObject(_user.users_parameters);
+            return JsonConvert.SerializeObject(_user.users_parameters, Formatting.Indented, new JsonSerializerSettings
+            {
+                PreserveReferencesHandling = PreserveReferencesHandling.Objects,
+                ReferenceLoopHandling = ReferenceLoopHandling.Serialize
+            });
         }
 
         public static String GetParametersAsJson(this program _program)
         {
-            return JsonConvert.SerializeObject(_program.program_parameters);
+            return JsonConvert.SerializeObject(_program.program_parameters, Formatting.Indented, new JsonSerializerSettings
+            {
+                PreserveReferencesHandling = PreserveReferencesHandling.Objects,
+                ReferenceLoopHandling = ReferenceLoopHandling.Serialize
+            });
         }
 
         public static String GetProgramsAsJson(this user _user)
         {
-            return JsonConvert.SerializeObject(_user.programs);
+            return JsonConvert.SerializeObject(_user.programs, Formatting.Indented, new JsonSerializerSettings
+            {
+                PreserveReferencesHandling = PreserveReferencesHandling.Objects,
+                ReferenceLoopHandling = ReferenceLoopHandling.Serialize
+            });
         }
 
         public static void ExportUserParametersAsJson(this user _user, String _path)
         {
-            string correspondingUserPath = _path + _user.label + Path.DirectorySeparatorChar;
+            string correspondingUserPath = _path + Path.DirectorySeparatorChar + _user.label + Path.DirectorySeparatorChar;
             Directory.CreateDirectory(Path.GetDirectoryName(correspondingUserPath));
             using (StreamWriter file = File.CreateText(correspondingUserPath + Path.DirectorySeparatorChar + _user.label + "_user_parameters.json"))
             {
-                JsonSerializer serializer = new JsonSerializer();
-                serializer.Serialize(file, _user.GetParametersAsJson());
+                JsonSerializer serializer = new JsonSerializer
+                {
+                    Formatting = Formatting.Indented,
+                    PreserveReferencesHandling = PreserveReferencesHandling.Objects,
+                    ReferenceLoopHandling = ReferenceLoopHandling.Serialize
+                };
+                serializer.Serialize(file, _user.users_parameters);
             }
         }
+        
 
         public static void ExportProgramParametersAsJson(this user _user, String _path)
         {
-            string correspondingUserPath = _path + _user.label + Path.DirectorySeparatorChar;
+            string correspondingUserPath = _path + Path.DirectorySeparatorChar + _user.label + Path.DirectorySeparatorChar;
             Directory.CreateDirectory(Path.GetDirectoryName(correspondingUserPath));
             using (StreamWriter file = File.CreateText(correspondingUserPath + Path.DirectorySeparatorChar + _user.label + "_program_parameters.json"))
             {
-                JsonSerializer serializer = new JsonSerializer();
-                serializer.Serialize(file, _user.GetProgramsAsJson());
+                JsonSerializer serializer = new JsonSerializer
+                {
+                    Formatting = Formatting.Indented,
+                    PreserveReferencesHandling = PreserveReferencesHandling.Objects,
+                    ReferenceLoopHandling = ReferenceLoopHandling.Serialize
+                };
+                serializer.Serialize(file, _user.programs);
+            }
+        }
+
+        public static void ExportUserAsJson(this user _user, String _path)
+        {
+            string correspondingUserPath = _path + Path.DirectorySeparatorChar + _user.label + Path.DirectorySeparatorChar;
+            Directory.CreateDirectory(Path.GetDirectoryName(correspondingUserPath));
+            using (StreamWriter file = File.CreateText(correspondingUserPath + Path.DirectorySeparatorChar + _user.label + ".json"))
+            {
+                JsonSerializer serializer = new JsonSerializer
+                {
+                    Formatting = Formatting.Indented,
+                    PreserveReferencesHandling = PreserveReferencesHandling.Objects,
+                    ReferenceLoopHandling = ReferenceLoopHandling.Serialize
+                };
+                serializer.Serialize(file, _user);
             }
         }
 
         public static void ExportUserImages(this user _user, String _path)
         {
-            string correspondingUserPath = _path + _user.label + Path.DirectorySeparatorChar;
+            string correspondingUserPath = _path + Path.DirectorySeparatorChar + _user.label + Path.DirectorySeparatorChar;
             //Directory.CreateDirectory(Path.GetDirectoryName(correspondingUserPath));
             //using (StreamWriter file = File.CreateText(correspondingUserPath + Path.DirectorySeparatorChar + _user.label + ".jpeg"))
             //{

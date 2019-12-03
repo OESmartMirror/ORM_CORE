@@ -9,6 +9,7 @@
 
 namespace ORM_Core
 {
+    using Newtonsoft.Json;
     using System;
     using System.Data.Entity;
     using System.Data.Entity.Infrastructure;
@@ -24,7 +25,9 @@ namespace ORM_Core
         {
             throw new UnintentionalCodeFirstException();
         }
-    
+
+
+        [JsonIgnore]
         public virtual DbSet<picture> pictures { get; set; }
         public virtual DbSet<program_parameters> program_parameters { get; set; }
         public virtual DbSet<program> programs { get; set; }

@@ -10,7 +10,7 @@
             <PropertyRef Name="id" />
           </Key>
           <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-          <Property Name="user_id" Type="int" Nullable="false" />
+          <Property Name="user_id" Type="int" />
           <Property Name="picture" Type="longblob" Nullable="false" />
           <Property Name="time_stamp" Type="timestamp" Precision="0" Nullable="false" />
         </EntityType>
@@ -19,7 +19,7 @@
             <PropertyRef Name="id" />
           </Key>
           <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-          <Property Name="program_id" Type="int" Nullable="false" />
+          <Property Name="program_id" Type="int" />
           <Property Name="parameter_name" Type="varchar" MaxLength="20" Nullable="false" />
           <Property Name="parameter_value" Type="varchar" MaxLength="100" Nullable="false" />
         </EntityType>
@@ -29,7 +29,7 @@
           </Key>
           <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="name" Type="varchar" MaxLength="50" Nullable="false" />
-          <Property Name="user_id" Type="int" Nullable="false" />
+          <Property Name="user_id" Type="int" />
         </EntityType>
         <EntityType Name="users">
           <Key>
@@ -43,12 +43,14 @@
             <PropertyRef Name="id" />
           </Key>
           <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-          <Property Name="user_id" Type="int" Nullable="false" />
+          <Property Name="user_id" Type="int" />
           <Property Name="parameter_name" Type="varchar" MaxLength="20" Nullable="false" />
           <Property Name="parameter_value" Type="varchar" MaxLength="100" Nullable="false" />
         </EntityType>
         <Association Name="pictures_users_id_fk">
-          <End Role="users" Type="Self.users" Multiplicity="1" />
+          <End Role="users" Type="Self.users" Multiplicity="0..1">
+            <OnDelete Action="Cascade" />
+          </End>
           <End Role="pictures" Type="Self.pictures" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="users">
@@ -60,7 +62,9 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="program_parameters_users_id_fk">
-          <End Role="programs" Type="Self.programs" Multiplicity="1" />
+          <End Role="programs" Type="Self.programs" Multiplicity="0..1">
+            <OnDelete Action="Cascade" />
+          </End>
           <End Role="program_parameters" Type="Self.program_parameters" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="programs">
@@ -72,7 +76,9 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="programs_users_id_fk">
-          <End Role="users" Type="Self.users" Multiplicity="1" />
+          <End Role="users" Type="Self.users" Multiplicity="0..1">
+            <OnDelete Action="Cascade" />
+          </End>
           <End Role="programs" Type="Self.programs" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="users">
@@ -84,7 +90,9 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="users_parameters_users_id_fk">
-          <End Role="users" Type="Self.users" Multiplicity="1" />
+          <End Role="users" Type="Self.users" Multiplicity="0..1">
+            <OnDelete Action="Cascade" />
+          </End>
           <End Role="users_parameters" Type="Self.users_parameters" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="users">
