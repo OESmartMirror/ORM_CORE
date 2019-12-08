@@ -81,3 +81,10 @@ C:\Users\csont\source\repos\ORM_Core\ORM_Core\obj\Debug\ORM_Core.csproj.CopyComp
 C:\Users\csont\source\repos\ORM_Core\ORM_Core\obj\Debug\ORM_Core.exe
 C:\Users\csont\source\repos\ORM_Core\ORM_Core\obj\Debug\ORM_Core.pdb
 C:\Users\csont\source\repos\ORM_Core\ORM_Core\obj\Debug\ORM_Core.csprojAssemblyReference.cache
+C:\Users\csont\source\repos\ORM_Core\ORM_Core\bin\Debug\Serilog.dll
+C:\Users\csont\source\repos\ORM_Core\ORM_Core\bin\Debug\Serilog.Sinks.Console.dll
+C:\Users\csont\source\repos\ORM_Core\ORM_Core\bin\Debug\Serilog.Sinks.File.dll
+C:\Users\csont\source\repos\ORM_Core\ORM_Core\bin\Debug\Serilog.xml
+C:\Users\csont\source\repos\ORM_Core\ORM_Core\bin\Debug\Serilog.Sinks.Console.xml
+C:\Users\csont\source\repos\ORM_Core\ORM_Core\bin\Debug\Serilog.Sinks.File.pdb
+C:\Users\csont\source\repos\ORM_Core\ORM_Core\bin\Debug\Serilog.Sinks.File.xml

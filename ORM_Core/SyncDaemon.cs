@@ -8,5 +8,6 @@ namespace ORM_Core
 {
     class SyncDaemon
     {
+
     }
 }

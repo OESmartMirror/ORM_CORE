@@ -158,6 +158,15 @@ namespace ORM_Core
             }
         }
 
+        public static String GetUserAsJson(this user _user)
+        {
+            return JsonConvert.SerializeObject(_user, Formatting.Indented, new JsonSerializerSettings
+            {
+                PreserveReferencesHandling = PreserveReferencesHandling.Objects,
+                ReferenceLoopHandling = ReferenceLoopHandling.Serialize
+            });
+        }
+
         public static String GetParametersAsJson(this user _user)
         {
             return JsonConvert.SerializeObject(_user.users_parameters, Formatting.Indented, new JsonSerializerSettings
@@ -257,15 +266,31 @@ namespace ORM_Core
             program temp = null;
             foreach(program prog in _user.programs)
             {
-                foreach(program_parameters pp in prog.program_parameters)
+                //foreach(program_parameters pp in prog.program_parameters)
+                //{
+                //    if(pp.parameter_name.Equals("ProgramName") && pp.parameter_value.Equals(_programName))
+                //    {
+                //        temp = prog;
+                //    }
+                //}
+                if (prog.name.Equals(_programName))
                 {
-                    if(pp.parameter_name.Equals("ProgramName") && pp.parameter_value.Equals(_programName))
-                    {
-                        temp = prog;
-                    }
+                    temp = prog;
                 }
-
                 //TODO Figure out how change to .net 4.8
+            }
+            return temp;
+        }
+
+        public static user GetUserByLable(this datatableEntities1 _dbContext, String _label)
+        {
+            user temp = null;
+            foreach(user usr in _dbContext.users)
+            {
+                if (usr.label.Equals(_label))
+                {
+                    temp = usr;
+                }
             }
             return temp;
         }

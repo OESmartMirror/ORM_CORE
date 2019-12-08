@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Serilog;
+using System;
 using System.Collections.Generic;
 using System.Diagnostics;
 using System.IO;
@@ -12,11 +13,17 @@ namespace ORM_Core
     {
         static void Main(string[] args)
         {
+            Log.Logger = new LoggerConfiguration()
+                .MinimumLevel.Debug()
+                .WriteTo.Console()
+                .WriteTo.File("logs\\DBSync.txt", rollingInterval: RollingInterval.Day)
+                .CreateLogger();
+
             datatableEntities1 _datatableEntities1 = new datatableEntities1();
             try
             {
 
-                
+                Log.Information("Trying");
                 String path = "C:" + Path.DirectorySeparatorChar + "Face";
 
                 if (true == true)
@@ -97,15 +104,23 @@ namespace ORM_Core
                     //datatableEntities1.SaveChanges();
                 }
 
+                Log.Information("Calling downstream sync");
                 _datatableEntities1.DSync(path);
             }
             catch (Exception ex)
             {
+                Log.Error(ex, "Something went wrong");
                 while (ex.InnerException != null)
                 {
                     Debug.Write(ex.StackTrace);
                     ex = ex.InnerException;
+                    Log.Error(ex, "Something went wrong");
                 }
+            }
+            finally
+            {
+                Log.Information("Done trying");
+                Log.CloseAndFlush();
             }
         }
     }
